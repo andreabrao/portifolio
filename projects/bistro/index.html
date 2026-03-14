@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bistrô Petit Gourmet | Haute Cuisine</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+
+    <div id="custom-cursor"></div>
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">Petit Gourmet</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Cardápio</a></li>
+                <li><a href="#depoimentos">Experiências</a></li>
+                <li><a href="#contato">Reservas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <h1 class="reveal">L'Art de Gastronomie</h1>
+                <p class="reveal">Sabores sofisticados e momentos inesquecíveis no coração da cidade.</p>
+                <div class="reveal">
+                    <a href="#menu" class="btn-magico">Explorar Cardápio</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu">
+            <h2 class="reveal">Seleção do Chef</h2>
+            <div class="filter-buttons reveal">
+                <button class="active" onclick="filterMenu('todos', event)">Todos</button>
+                <button onclick="filterMenu('pratos', event)">Pratos</button>
+                <button onclick="filterMenu('bebidas', event)">Bebidas</button>
+                <button onclick="filterMenu('sobremesas', event)">Sobremesas</button>
+            </div>
+            <div class="menu-grid reveal" id="menu-container">
+                </div>
+        </section>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
+        <section id="galeria" class="reveal">
+            <h2>Nossos Momentos</h2>
+            <div class="filter-buttons reveal">
+                <button class="active" onclick="filterGallery('todos', event)">Todos</button>
+                <button onclick="filterGallery('gastronomia', event)">Gastronomia</button>
+                <button onclick="filterGallery('ambiente', event)">O Espaço</button>
+                <button onclick="filterGallery('bebidas', event)">Drinks & Vinhos</button>
+            </div>
+
+            <div class="gallery-grid">
+                <a href="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1200" class="glightbox gallery-item gastronomia" data-gallery="bistro_gallery" data-title="Filé Mignon ao Molho Madeira" data-description="Acompanhado de risoto de açafrão.">
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=600" alt="Filé Mignon Gourmet">
+                    <div class="gallery-overlay"><span>Ver Prato</span></div>
+                </a>
+                <a href="https://images.unsplash.com/photo-1544124499-58912cbddaad?q=80&w=1200" class="glightbox gallery-item gastronomia" data-gallery="bistro_gallery" data-title="Petit Gâteau de Chocolate Belga" data-description="Com sorvete artesanal de baunilha Bourbon.">
+                    <img src="https://images.unsplash.com/photo-1544124499-58912cbddaad?q=80&w=600" alt="Sobremesa de Chocolate">
+                    <div class="gallery-overlay"><span>Ver Sobremesa</span></div>
+                </a>
+                <a href="https://images.unsplash.com/photo-1512132411229-c30391241dd8?q=80&w=1200" class="glightbox gallery-item gastronomia" data-gallery="bistro_gallery" data-title="Salmão Grelhado à Belle Meunière" data-description="Com alcaparras, champignon e camarões.">
+                    <img src="https://images.unsplash.com/photo-1512132411229-c30391241dd8?q=80&w=600" alt="Prato de Salmão">
+                    <div class="gallery-overlay"><span>Ver Prato</span></div>
+                </a>
+                <a href="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1200" class="glightbox gallery-item ambiente" data-gallery="bistro_gallery" data-title="Detalhes da Decoração" data-description="Cada elemento pensado para sua experiência.">
+                    <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=600" alt="Decoração Bistrô">
+                    <div class="gallery-overlay"><span>Ver Detalhes</span></div>
+                </a>
+                <a href="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200" class="glightbox gallery-item ambiente" data-gallery="bistro_gallery" data-title="Área Externa (Terraço)" data-description="Perfeito para noites agradáveis.">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=600" alt="Terraço Bistrô">
+                    <div class="gallery-overlay"><span>Ver Área Externa</span></div>
+                </a>
+
+                <a href="https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=1200" class="glightbox gallery-item bebidas" data-gallery="bistro_gallery" data-title="Nossa Carta de Vinhos" data-description="Rótulos exclusivos das melhores regiões.">
+                    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=600" alt="Vinhos Exclusivos">
+                    <div class="gallery-overlay"><span>Ver Vinhos</span></div>
+                </a>
+            </div>
+        </section>
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+        <section id="depoimentos" class="reveal">
+            <h2>Experiências</h2>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <p>"Uma explosão de sabores! O confit de pato é simplesmente divino."</p>
+                            <span>- Arthur Montez</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <p>"Ambiente acolhedor e atendimento digno de estrelas Michelin."</p>
+                            <span>- Helena Cavalcanti</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <p>"O Negroni da casa é o melhor que já tomei. Voltarei com certeza."</p>
+                            <span>- Bruno Silveira</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contato">
+        <p>&copy; 2026 Petit Gourmet Bistro | Rua das Estrelas, 88</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D'LEONARDO | MOVIMENTO SOAVE</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,900;1,9..144,400&family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+        :root {
+            --ita-green: #008C45;
+            --ita-white: #fdfdfb;
+            --ita-red: #CD212A;
+            --charcoal: #1a1a1a;
+        }
+
+        /* Cursor Customizado */
+        * { margin: 0; padding: 0; box-sizing: border-box; cursor: none; }
+        
+        body {
+            background-color: var(--ita-white);
+            color: var(--charcoal);
+            font-family: 'Montserrat', sans-serif;
+            background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+            overflow-x: hidden;
+        }
+
+        #cursor-dot { width: 6px; height: 6px; background: var(--ita-red); border-radius: 50%; position: fixed; pointer-events: none; z-index: 10000; }
+        #cursor-outline { width: 35px; height: 35px; border: 1px solid var(--ita-green); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.1s ease-out; }
+
+        header {
+            position: absolute; width: 100%; padding: 40px 5%;
+            display: flex; justify-content: space-between; align-items: center; z-index: 100;
+        }
+
+        .logo { font-family: 'Fraunces', serif; font-weight: 900; font-size: 1.5rem; color: #fff; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+
+        /* --- HERO COM MOVIMENTO SUAVE (GSAP) --- */
+        .hero {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            position: relative;
+            z-index: 10;
+            /* Fundo inicial fixo antes da animação */
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.2) 100%), 
+                        url('https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?q=80&w=1974') center/cover;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            z-index: 20;
+            width: 70%;
+            color: #fff;
+            /* Preparando para animação de entrada */
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .hero-content h1 {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(4rem, 13vw, 10rem);
+            line-height: 0.8;
+            margin-bottom: 25px;
+            letter-spacing: -4px;
+        }
+
+        .hero-content h1 .txt-green { color: var(--ita-green); }
+        .hero-content h1 .txt-red { font-weight: 400; font-style: italic; color: var(--ita-red); }
+
+        .hero-content p {
+            max-width: 500px;
+            font-size: 1.3rem;
+            line-height: 1.4;
+            font-family: 'Fraunces', serif;
+            opacity: 0.9;
+        }
+
+        /* --- MARQUEE --- */
+        .marquee-section {
+            background: var(--ita-green);
+            padding: 25px 0;
+            overflow: hidden;
+            display: flex;
+            transform: rotate(-1deg);
+            z-index: 40;
+            border-bottom: 5px solid var(--ita-red);
+            position: relative;
+        }
+
+        .marquee-text {
+            font-family: 'Fraunces';
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: white;
+            white-space: nowrap;
+            text-transform: uppercase;
+        }
+
+        /* --- CARDÁPIO --- */
+        .menu-wrapper {
+            position: relative;
+            background: #ffffff;
+            padding: 120px 5%;
+            z-index: 30;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .menu-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .menu-category {
+            font-family: 'Fraunces';
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--ita-red);
+            display: block;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .pizza-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 50px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            transition: 0.4s;
+        }
+
+        .pizza-item:hover {
+            color: var(--ita-green);
+            border-bottom-color: var(--ita-red);
+            transform: translateX(10px);
+        }
+
+        .pizza-info { flex: 1; }
+
+        .pizza-info h3 {
+            font-family: 'Fraunces';
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+
+        .pizza-info p {
+            font-family: 'Fraunces';
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 80%;
+        }
+
+        .pizza-price {
+            font-family: 'Fraunces';
+            font-weight: 900;
+            font-size: 2.2rem;
+            color: var(--ita-red);
+            margin-left: 20px;
+        }
+
+        footer {
+            padding: 120px 5%;
+            background: var(--charcoal);
+            color: white;
+            text-align: center;
+            z-index: 50;
+            position: relative;
+        }
+
+        .btn-table {
+            font-family: 'Fraunces';
+            font-size: 5vw;
+            color: white;
+            text-decoration: none;
+            border-bottom: 3px solid var(--ita-green);
+            transition: 0.3s;
+        }
+
+        .btn-table:hover {
+            color: var(--ita-red);
+        }
+
+        @media (max-width: 768px) {
+            .hero { height: auto; padding-top: 150px; padding-bottom: 80px; flex-direction: column; }
+            .hero-content { width: 100%; text-align: center; }
+            .pizza-item { flex-direction: column; align-items: flex-start; }
+            .pizza-price { margin-left: 0; margin-top: 10px; }
+            #cursor-dot, #cursor-outline { display: none; }
+            * { cursor: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="cursor-dot"></div>
+    <div id="cursor-outline"></div>
+
+    <header>
+        <div class="logo">D'Leonardo</div>
+        <div style="font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; color: #fff; opacity: 0.8;">ORIGINALE ITALIANO</div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="reveal"><span class="txt-green">Fatto</span><br>a <span class="txt-red">Mano.</span></h1>
+                <p>O calor do forno a lenha encontra a tradição milenar. A verdadeira experiência da pizza italiana, agora na sua mesa.</p>
+            </div>
+        </section>
+
+        <div class="marquee-section">
+            <div class="marquee-text">
+                PASSIONE ITALIANA • TRADIZIONE VERA • INGREDIENTI FRESCHI • PASSIONE ITALIANA • TRADIZIONE VERA •&nbsp;
+            </div>
+            <div class="marquee-text">
+                PASSIONE ITALIANA • TRADIZIONE VERA • INGREDIENTI FRESCHI • PASSIONE ITALIANA • TRADIZIONE VERA •&nbsp;
+            </div>
+        </div>
+
+        <section class="menu-wrapper">
+            <span class="menu-category">Il Nostro Menu</span>
+            <div class="menu-container">
+                
+                <div class="pizza-item hover-target">
+                    <div class="pizza-info">
+                        <h3>Margherita</h3>
+                        <p>Tomate San Marzano DOP, mozzarella di bufala e manjericão fresco.</p>
+                    </div>
+                    <div class="pizza-price">€14</div>
+                </div>
+
+                <div class="pizza-item hover-target">
+                    <div class="pizza-info">
+                        <h3>Diavola</h3>
+                        <p>Salame picante artesanal, 'nduja calabresa e fios de mel.</p>
+                    </div>
+                    <div class="pizza-price">€17</div>
+                </div>
+
+                <div class="pizza-item hover-target">
+                    <div class="pizza-info">
+                        <h3>Tartufo</h3>
+                        <p>Creme de trufas negras, cogumelos silvestres e queijo pecorino romano.</p>
+                    </div>
+                    <div class="pizza-price">€26</div>
+                </div>
+
+                <div class="pizza-item hover-target">
+                    <div class="pizza-info">
+                        <h3>Parma</h3>
+                        <p>Prosciutto di Parma 24 mesi, burrata fresca e raspas de limão siciliano.</p>
+                    </div>
+                    <div class="pizza-price">€22</div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            <a href="#" class="btn-table hover-target">Prenota un Tavolo</a>
+            <div style="margin-top: 80px; opacity: 0.4; font-size: 0.7rem; letter-spacing: 4px;">PIZZERIA D'LEONARDO | FIRENZE • 2026</div>
+        </footer>
+    </main>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // 1. Cursor (Mantendo sua lógica existente)
+        const dot = document.getElementById('cursor-dot');
+        const outline = document.getElementById('cursor-outline');
+        window.addEventListener('mousemove', (e) => {
+            gsap.to(dot, { x: e.clientX, y: e.clientY, duration: 0 });
+            gsap.to(outline, { x: e.clientX - 17, y: e.clientY - 17, duration: 0.1 });
+        });
+
+        // 2. Hover Effect (Mantendo sua lógica existente)
+        document.querySelectorAll('.hover-target').forEach(el => {
+            el.addEventListener('mouseenter', () => gsap.to(outline, { scale: 1.5, background: "rgba(0, 140, 69, 0.1)" }));
+            el.addEventListener('mouseleave', () => gsap.to(outline, { scale: 1, background: "transparent" }));
+        });
+
+        // 3. Marquee (Mantendo sua lógica existente)
+        gsap.to(".marquee-text", {
+            xPercent: -100,
+            repeat: -1,
+            duration: 15,
+            ease: "none"
+        });
+
+        // 4. NOVA ANIMAÇÃO: Movimento Suave de Parallax na Imagem do Forno
+        gsap.to(".hero", {
+            scrollTrigger: {
+                trigger: ".hero",
+                start: "top top",
+                // scrub: true faz o movimento acompanhar o scroll suavemente
+                scrub: 1, 
+                // end: Define até onde a animação acontece (toda a altura da seção)
+                end: "bottom top" 
+            },
+            // Move o fundo 100px para cima ao rolar a página
+            y: -100, 
+            ease: "none"
+        });
+
+        // 5. NOVA ANIMAÇÃO: Entrada Elegante do Título Hero
+        gsap.to(".hero-content", {
+            opacity: 1,
+            y: 0,
+            duration: 1.5,
+            delay: 0.5,
+            ease: "power4.out"
+        });
+    </script>
+</body>
+</html>

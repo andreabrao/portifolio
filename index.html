@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>André Abrão | Landing Pages de Alta Performance</title>
+    <meta name="description" content="Especialista em Landing Pages ultra-rápidas e código Vanilla. 4 anos de experiência entregando performance máxima para o seu negócio.">
+    <meta name="author" content="André Abrão">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://andreabrao.github.io/portifolio/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://andreabrao.github.io/portifolio/">
+    <meta property="og:title" content="André Abrão | Interfaces de Alta Performance">
+    <meta property="og:description" content="Landing Pages que carregam em menos de 1 segundo. Pare de perder clientes por lentidão.">
+    <meta property="og:image" content="portifolio.webp">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://andreabrao.github.io/portifolio/">
+    <meta name="twitter:title" content="André Abrão | Landing Pages de Alta Performance">
+    <meta name="twitter:description" content="Especialista em Vanilla HTML & CSS. Performance nota 100 no Google Speed.">
+    <meta name="twitter:image" content="portifolio.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>AA.</text></svg>">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="magnetic-cursor"></div>
+    <div id="magnetic-cursor-dot"></div>
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+    <nav class="nav-bar" role="navigation" aria-label="Main navigation">
+        <div class="container nav-container">
+            <a href="#" class="nav-logo">AA<span>.</span></a>
+            
+            <div class="nav-menu">
+                <a href="#experiencia" data-i18n="nav_exp">Experiência</a>
+                <a href="#servicos" data-i18n="nav_services">Serviços</a>
+                <a href="#projetos" data-i18n="nav_projects">Projetos</a>
+                <a href="https://wa.me/5541984684382" class="nav-cta-link" data-i18n="nav_contact">Consultoria</a>
+            </div>
+
+            <div class="nav-controls">
+                <button id="lang-toggle" class="lang-toggle" aria-label="Mudar idioma">PT</button>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
+                    <span class="switch-track">
+                        <span class="switch-thumb"></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <section class="hero">
+            <div class="container hero-layout">
+                <div class="hero-content">
+                    <span class="badge hidden" data-i18n="hero_badge">Engenharia de Interface</span>
+                    <h1>
+                        Interfaces <br>
+                        <div class="cursor-wrapper">
+                            <span id="typing-text"></span>
+                            <span class="cursor">|</span>
+                        </div>
+                    </h1>
+                    <p class="hero-text hidden" data-i18n="hero_text">Transformo visões complexas em experiências digitais leves, orgânicas e tecnicamente impecáveis.</p>
+                    <div class="hero-actions hidden">
+                        <a href="https://wa.me/5541984684382" class="btn-hire-main" data-i18n="btn_hire">Iniciar Projeto</a>
+                        <a href="#projetos" class="btn-secondary" data-i18n="btn_projects">Explorar Portfólio</a>
+                    </div>
+                </div>
+                
+                <div class="hero-image-wrapper hidden">
+                   <img src="andre.webp" alt="André Abrão" width="500" height="600" class="hero-profile-pic" fetchpriority="high">
+                </div>
+            </div>
+        </section>
+
+        <section id="experiencia" class="container stats hidden">
+            <div class="stat-item">
+                <h2>4<sup>+</sup></h2>
+                <p data-i18n="stat_years">Anos de Mercado</p>
+            </div>
+            <div class="stat-item">
+                <h2>50<sup>+</sup></h2>
+                <p data-i18n="stat_projects">Projetos Entregues</p>
+            </div>
+            <div class="stat-item">
+                <h2>100%</h2>
+                <p data-i18n="stat_vanilla">Vanilla Focused</p>
+            </div>
+        </section>
+
+        <section id="sobre" class="container">
+            <div class="about-layout">
+                <div class="about-content hidden">
+                    <span class="badge" data-i18n="about_badge">O Especialista</span>
+                    <h2 data-i18n="about_title">O que eu posso fazer por <span>você?</span></h2>
+                    
+                    <p class="about-text" data-i18n="about_text">
+                        Sou o <strong>André Abrão</strong>, desenvolvedor focado em performance extrema e estética minimalista. Através do meu estúdio, ajudo negócios a escalarem através de código limpo (Vanilla) e interfaces que carregam instantaneamente. 
+                    </p>
+
+                    <div class="about-tags">
+                        <span class="tag-tech" 
+                            data-i18n="tag_vanilla" 
+                            data-tooltip-key="tooltip_vanilla" 
+                            data-tooltip="HTML5 e CSS3 Vanilla referem-se às tecnologias fundamentais da web utilizadas em sua forma pura, sem frameworks ou bibliotecas externas.">
+                            HTML5 / CSS3 Vanilla
+                        </span>
+
+                        <span class="tag-tech" 
+                            data-i18n="tag_js" 
+                            data-tooltip-key="tooltip_js" 
+                            data-tooltip="JS puro é a linguagem original e nativa, utilizada sem frameworks. Oferece alto desempenho e controle total sobre a interatividade.">
+                            JavaScript Puro
+                        </span>
+
+                        <span class="tag-tech" 
+                            data-i18n="tag_android" 
+                            data-tooltip-key="tooltip_android" 
+                            data-tooltip="Apps nativos desenvolvidos com Kotlin, a linguagem oficial do Google, garantindo segurança e fluidez máxima no sistema Android.">
+                            Android / Kotlin
+                        </span>
+
+                        <span class="tag-tech" 
+                            data-i18n="tag_vitals" 
+                            data-tooltip-key="tooltip_vitals" 
+                            data-tooltip="Métricas do Google que medem a experiência real do usuário (velocidade e estabilidade), essenciais para o ranqueamento SEO.">
+                            Web Vitals
+                        </span>
+                    </div>
+
+                    <p class="about-location">
+                        <span class="dot"></span> Itaperuçu, PR | Brasil
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="testimonials" class="container">
+            <div class="section-header hidden">
+                <span class="badge" data-i18n="social_badge">Feedback</span>
+                <h2 data-i18n="social_title">Resultados de quem <span>confia</span></h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card hidden">
+                    <div class="quote-icon">“</div>
+                    <p data-i18n="test_1_text">O André elevou o nível técnico das nossas LPs. O foco em código Vanilla trouxe uma velocidade que nunca tínhamos alcançado com frameworks.</p>
+                    <div class="client-info">
+                        <strong>Carlos Mendes</strong>
+                        <span>CEO, TechFlow Agência</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card hidden">
+                    <div class="quote-icon">“</div>
+                    <p data-i18n="test_2_text">Excelente profissional. A entrega do código é extremamente limpa e a performance no Google PageSpeed chegou aos 100 pontos.</p>
+                    <div class="client-info">
+                        <strong>Mariana Costa</strong>
+                        <span>Marketing Manager</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="metodo" class="container">
+            <div class="section-header hidden">
+                <span class="badge" data-i18n="method_badge">Workflow</span>
+                <h2 data-i18n="method_title">Processo <span>Artesanal</span></h2>
+            </div>
+            <div class="method-grid">
+                <div class="method-item hidden">
+                    <span class="method-num">01</span>
+                    <h3 data-i18n="method_1_h">Análise Estrutural</h3>
+                    <p data-i18n="method_1_p">Estudo do protótipo focando em acessibilidade e semântica pura.</p>
+                </div>
+                <div class="method-item hidden">
+                    <span class="method-num">02</span>
+                    <h3 data-i18n="method_2_h">Desenvolvimento Atômico</h3>
+                    <p data-i18n="method_2_p">Construção em HTML/CSS sem frameworks pesados. Código limpo.</p>
+                </div>
+                <div class="method-item hidden">
+                    <span class="method-num">03</span>
+                    <h3 data-i18n="method_3_h">Otimização Vital</h3>
+                    <p data-i18n="method_3_p">Ajuste de performance para atingir nota máxima no Google PageSpeed.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicos">
+            <div class="container">
+                <div class="section-header hidden">
+                    <span class="badge" data-i18n="serv_badge">Especialidades</span>
+                    <h2 data-i18n="serv_title">Soluções <span>Digitais</span></h2>
+                </div>
+                <div class="services-grid">
+                    <article class="service-card hidden">
+                        <div class="service-icon">🍃</div>
+                        <h3 data-i18n="serv_lp_title">Landing Pages Premium</h3>
+                        <p data-i18n="serv_lp_desc">Foco total em conversão com carregamento instantâneo.</p>
+                    </article>
+                    <article class="service-card hidden">
+                        <div class="service-icon">📱</div>
+                        <h3 data-i18n="serv_app_title">Desenvolvimento Mobile</h3>
+                        <p data-i18n="serv_app_desc">Apps nativos Android focados em usabilidade e fluidez.</p>
+                    </article>
+                    <article class="service-card hidden">
+                        <div class="service-icon">⚙️</div>
+                        <h3 data-i18n="serv_b2b_title">White Label para Agências</h3>
+                        <p data-i18n="serv_b2b_desc">Sua agência vende, eu entrego o código de alta performance.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="o-que-e-lp" class="container">
+            <div class="lp-info-box hidden">
+                <div class="lp-info-content">
+                    <span class="badge" data-i18n="lp_concept_badge">Conceito</span>
+                    <h2 data-i18n="lp_concept_title">Mas afinal, o que é uma <span>Landing Page</span>?</h2>
+                    <p data-i18n="lp_concept_desc">Diferente de um site institucional cheio de distrações, uma <strong>Landing Page</strong> é uma página única construída com um único objetivo: <strong>conversão</strong>.</p>
+                    
+                    <div class="lp-features">
+                        <div class="lp-feature-item">
+                            <strong data-i18n="lp_feat_1_h">🎯 Foco Único</strong>
+                            <p data-i18n="lp_feat_1_p">Elimina menus complexos para guiar o usuário até a ação (compra ou contato).</p>
+                        </div>
+                        <div class="lp-feature-item">
+                            <strong data-i18n="lp_feat_2_h">⚡ Velocidade Crítica</strong>
+                            <p data-i18n="lp_feat_2_p">Páginas leves convertem até 3x mais. Cada milissegundo conta no Google Ads.</p>
+                        </div>
+                        <div class="lp-feature-item">
+                            <strong data-i18n="lp_feat_3_h">📱 Mobile First</strong>
+                            <p data-i18n="lp_feat_3_p">Design pensado para quem compra pelo celular no WhatsApp ou Instagram.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="google-speed" class="container">   
+            <div class="performance-content hidden">
+                <span class="badge" data-i18n="speed_badge">Prova Técnica</span>
+                <h2 data-i18n="speed_title">Velocidade <span>Incomparável</span></h2>  
+                <picture>
+                    <source media="(min-width: 1024px)" srcset="optimize-desktop.webp">
+                    <img src="optimize.webp" alt="Score 100 Google PageSpeed" class="service-image" loading="lazy">
+                </picture>
+            </div>
+        </section>
+
+        <section id="projetos" class="container">
+            <div class="section-header hidden">
+                <span class="badge" data-i18n="projects_badge">Curadoria</span>
+                <h2 data-i18n="projects_title">Projetos de <span>Impacto</span></h2>
+            </div>
+
+            <div class="projects-grid">
+
+                <article class="project-card hidden">
+                    <div class="browser-ui">
+                        <div class="browser-dots"><span></span><span></span><span></span></div>
+                        <div class="browser-address">detox-orange.app</div>
+                    </div>
+                    <div class="iframe-wrapper" id="project-detox-orange">
+                        <div class="project-placeholder">
+                            <img src="thumbs/detox.webp" alt="Preview Detox">
+                            <button class="btn-live-demo" data-i18n="btn_explore" onclick="loadIframe('project-detox-orange', 'projects/detox-orange/index.html')">Explorar Projeto</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card hidden">
+                    <div class="browser-ui">
+                        <div class="browser-dots"><span></span><span></span><span></span></div>
+                        <div class="browser-address">pizzaria-dleonardo.com.br</div>
+                    </div>
+                    <div class="iframe-wrapper" id="project-pizzeria">
+                        <div class="project-placeholder">
+                            <img src="thumbs/pizzaria.webp" alt="Preview Pizzaria">
+                            <button class="btn-live-demo" data-i18n="btn_explore" onclick="loadIframe('project-pizzeria', 'projects/Pizaria-D\'Leonardo/index.html')">Explorar Projeto</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card hidden">
+                    <div class="browser-ui">
+                        <div class="browser-dots"><span></span><span></span><span></span></div>
+                        <div class="browser-address">bistro-petit-gourmet.vercel.app</div>
+                    </div>
+                    <div class="iframe-wrapper" id="project-bistro">
+                        <div class="project-placeholder">
+                            <img src="thumbs/bistro.webp" alt="Preview Bistrô">
+                            <button class="btn-live-demo" data-i18n="btn_explore" onclick="loadIframe('project-bistro', 'projects/bistro/index.html')">Explorar Projeto</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <section id="faq" class="container">
+            <div class="section-header hidden">
+                <span class="badge" data-i18n="faq_badge">Dúvidas</span>
+                <h2 data-i18n="faq_title">Perguntas <span>Frequentes</span></h2>
+            </div>
+            <div class="faq-grid">
+                <details class="method-item hidden">
+                    <summary data-i18n="faq_q1">Qual a vantagem do código Vanilla?</summary>
+                    <p data-i18n="faq_a1">Sites sem frameworks pesados carregam até 10x mais rápido. Isso reduz o custo por clique em anúncios e melhora o ranqueamento no Google.</p>
+                </details>
+                <details class="method-item hidden">
+                    <summary data-i18n="faq_q2">Vocês entregam o design ou apenas o código?</summary>
+                    <p data-i18n="faq_a2">Atuo nas duas frentes: posso transformar um protótipo (Figma) em código ou criar a interface do zero focada no seu público-alvo.</p>
+                </details>
+                <details class="method-item hidden">
+                    <summary data-i18n="faq_q3">Como funciona o suporte pós-entrega?</summary>
+                    <p data-i18n="faq_a3">Ofereço acompanhamento para garantir que a performance se mantenha estável e suporte técnico para qualquer ajuste necessário no servidor.</p>
+                </details>
+            </div>
+        </section>
+
+    <footer id="contato" class="footer">
+        <div class="container hidden">
+            <h2 data-i18n="contact_title">Vamos cultivar o seu próximo <span>sucesso</span>?</h2>
+            <div class="footer-cta">
+                <a href="https://wa.me/5541984684382" class="btn-primary" data-i18n="btn_contact_chat">Iniciar Conversa</a>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/andre-andre-83254430b" aria-label="LinkedIn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+                <a href="https://github.com/andreabrao" aria-label="GitHub">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+            </div>
+            <p class="copyright">© 2026 André Abrão. <br>Itaperuçu, PR | Front-end & Android Engineer</p>
+        </div>
+    </footer>
+    <div class="color-test-strip">
+        <div class="strip-box" style="background: var(--primary);" data-color="Primary"></div>
+        <div class="strip-box" style="background: var(--secondary);" data-color="Secondary"></div>
+        <div class="strip-box" style="background: var(--accent);" data-color="Accent"></div>
+        <div class="strip-box" style="background: var(--text-main);" data-color="Text"></div>
+        <div class="strip-box" style="background: var(--bg);" data-color="BG"></div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const textElement = document.getElementById('typing-text');
+        
+        const translations = {
+            'pt-BR': [
+                "com Performance.",
+                "Instantâneas.",
+                "feitas com IA.",
+                "Ultra Rápidas.",
+                "com Código Puro.",
+                "que Convertem."
+            ],
+            'en': [
+                "with Performance.",
+                "Instantaneous.",
+                "AI powered.",
+                "Ultra Fast.",
+                "with Pure Code.",
+                "that Convert."
+            ]
+        };
+
+        // Puxa o idioma do <html lang="...">
+        const currentLang = document.documentElement.lang || 'pt-BR';
+        const phrases = translations[currentLang] || translations['pt-BR'];
+
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typeSpeed = 100;
+
+        function type() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                textElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+                typeSpeed = 40; // Apagar é mais rápido e fluido
+            } else {
+                textElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+                typeSpeed = 120; // Digitação natural
+            }
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                isDeleting = true;
+                typeSpeed = 3000; // Tempo de leitura da frase cheia
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typeSpeed = 700; // Pausa antes de começar a próxima
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        type();
+    });
+    </script>
+</body>
+</html>
