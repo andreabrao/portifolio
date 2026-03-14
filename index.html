@@ -267,6 +267,19 @@
                         <div class="browser-dots"><span></span><span></span><span></span></div>
                         <div class="browser-address">detox-orange.app</div>
                     </div>
+                    <div class="iframe-wrapper" id="project-hamburgue-doce">
+                        <div class="project-placeholder">
+                            <img src="thumbs/doce.webp" alt="Preview Hamburgue Doce">
+                            <button class="btn-live-demo" data-i18n="btn_explore" onclick="loadIframe('project-hamburgue-doce', 'projects/hamburguer-doce/index.html')">Explorar Projeto</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card hidden">
+                    <div class="browser-ui">
+                        <div class="browser-dots"><span></span><span></span><span></span></div>
+                        <div class="browser-address">detox-orange.app</div>
+                    </div>
                     <div class="iframe-wrapper" id="project-detox-orange">
                         <div class="project-placeholder">
                             <img src="thumbs/detox.webp" alt="Preview Detox">
@@ -350,7 +363,20 @@
         <div class="strip-box" style="background: var(--bg);" data-color="BG"></div>
     </div>
     <script src="script.js"></script>
-    <script>
+<script>
+    // 1. A função LOADIFRAME precisa ficar fora para ser acessível pelos botões
+    function loadIframe(containerId, url) {
+        const container = document.getElementById(containerId);
+        if (container) {
+            container.innerHTML = `
+                <iframe src="${url}" 
+                        frameborder="0" 
+                        style="width:100%; height:100%; border:none; border-radius: 12px;" 
+                        title="Projeto Demo">
+                </iframe>`;
+        }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
         const textElement = document.getElementById('typing-text');
         
@@ -373,7 +399,6 @@
             ]
         };
 
-        // Puxa o idioma do <html lang="...">
         const currentLang = document.documentElement.lang || 'pt-BR';
         const phrases = translations[currentLang] || translations['pt-BR'];
 
@@ -388,20 +413,20 @@
             if (isDeleting) {
                 textElement.textContent = currentPhrase.substring(0, charIndex - 1);
                 charIndex--;
-                typeSpeed = 40; // Apagar é mais rápido e fluido
+                typeSpeed = 40;
             } else {
                 textElement.textContent = currentPhrase.substring(0, charIndex + 1);
                 charIndex++;
-                typeSpeed = 120; // Digitação natural
+                typeSpeed = 120;
             }
 
             if (!isDeleting && charIndex === currentPhrase.length) {
                 isDeleting = true;
-                typeSpeed = 3000; // Tempo de leitura da frase cheia
+                typeSpeed = 3000;
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
                 phraseIndex = (phraseIndex + 1) % phrases.length;
-                typeSpeed = 700; // Pausa antes de começar a próxima
+                typeSpeed = 700;
             }
 
             setTimeout(type, typeSpeed);
@@ -409,6 +434,6 @@
 
         type();
     });
-    </script>
+</script>
 </body>
 </html>
