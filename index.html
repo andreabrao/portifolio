@@ -157,7 +157,7 @@
                         <span data-i18n="test_3_sub">Health & Wellness Brand</span>
                     </div>
                 </div>
-                
+
                 <div class="testimonial-card hidden">
                     <div class="quote-icon">“</div>
                     <p data-i18n="test_1_text">O André elevou o nível técnico das nossas LPs. O foco em código Vanilla trouxe uma velocidade que nunca tínhamos alcançado com frameworks.</p>
@@ -443,6 +443,19 @@
         }
 
         type();
+     // Bloqueia o clique com o botão direito
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // Bloqueia atalhos de teclado (Ctrl+C, Ctrl+U, Ctrl+S)
+        document.onkeydown = function(e) {
+            if (e.ctrlKey && 
+                (e.keyCode === 67 || // C
+                e.keyCode === 85 || // U (Ver código fonte)
+                e.keyCode === 83 || // S (Salvar página)
+                e.keyCode === 73)) { // I (Inspecionar elemento)
+                return false;
+            }
+        };
     });
 </script>
 </body>
