@@ -576,6 +576,8 @@
     }
 
     @media (max-width: 680px) {
+      html, body { scrollbar-width: none; }
+      html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; height: 0; }
       .container { width: min(100% - 28px, 1160px); }
       .section { padding: 82px 0; }
       .topbar-inner { flex-direction: column; gap: 1px; padding: 7px 0; line-height: 1.35; }
