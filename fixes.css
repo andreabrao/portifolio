@@ -1231,6 +1231,16 @@ body.dark .strategic-services li {
         line-height: 1;
     }
 
+    .hero-conversion h1 .hero-typing-line {
+        height: 2.2em;
+        min-height: 2.2em;
+        overflow: hidden;
+    }
+
+    .hero-conversion h1 .typing-caret {
+        display: none;
+    }
+
     .hero-conversion .hero-text {
         font-size: 1.03rem;
     }
