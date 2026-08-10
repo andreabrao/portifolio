@@ -14,30 +14,32 @@
     <meta property="og:url" content="https://andreabrao.github.io/portifolio/">
     <meta property="og:title" content="André Abrão | Interfaces de Alta Performance">
     <meta property="og:description" content="Landing Pages que carregam em menos de 1 segundo. Pare de perder clientes por lentidão.">
-    <meta property="og:image" content="portifolio.webp">
+    <meta property="og:image" content="https://andreabrao.github.io/portifolio/portifolio.webp">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://andreabrao.github.io/portifolio/">
     <meta name="twitter:title" content="André Abrão | Landing Pages de Alta Performance">
     <meta name="twitter:description" content="Especialista em Vanilla HTML & CSS. Performance nota 100 no Google Speed.">
-    <meta name="twitter:image" content="portifolio.webp">
+    <meta name="twitter:image" content="https://andreabrao.github.io/portifolio/portifolio.webp">
+    <meta name="theme-color" content="#1b3022">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>AA.</text></svg>">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fixes.css?v=20260810e">
 </head>
 <body>
     <div id="magnetic-cursor"></div>
     <div id="magnetic-cursor-dot"></div>
     <a class="skip-link" href="#main">Pular para o conteúdo</a>
 
-    <nav class="nav-bar" role="navigation" aria-label="Main navigation">
+    <nav class="nav-bar" role="navigation" aria-label="Navegação principal" data-i18n-aria-label="nav_aria">
         <div class="container nav-container">
             <a href="#" class="nav-logo">AA<span>.</span></a>
             
-            <div class="nav-menu">
+            <div class="nav-menu" id="nav-menu">
                 <a href="#experiencia" data-i18n="nav_exp">Experiência</a>
                 <a href="#servicos" data-i18n="nav_services">Serviços</a>
                 <a href="#projetos" data-i18n="nav_projects">Projetos</a>
@@ -45,11 +47,14 @@
             </div>
 
             <div class="nav-controls">
-                <button id="lang-toggle" class="lang-toggle" aria-label="Mudar idioma">PT</button>
-                <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
+                <button id="lang-toggle" class="lang-toggle" aria-label="Mudar para inglês">EN</button>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema" aria-pressed="false">
                     <span class="switch-track">
                         <span class="switch-thumb"></span>
                     </span>
+                </button>
+                <button id="nav-toggle" class="nav-toggle" type="button" aria-label="Abrir menu" aria-controls="nav-menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
                 </button>
             </div>
         </div>
@@ -60,16 +65,16 @@
             <div class="container hero-layout">
                 <div class="hero-content">
                     <span class="badge hidden" data-i18n="hero_badge">Engenharia de Interface</span>
-                    <h1>
+                    <h1 aria-label="Interfaces com performance" data-i18n-aria-label="hero_aria">
                         Interfaces <br>
-                        <div class="cursor-wrapper">
+                        <span class="cursor-wrapper" aria-hidden="true">
                             <span id="typing-text"></span>
-                            <span class="cursor">|</span>
-                        </div>
+                            <span class="cursor" aria-hidden="true">|</span>
+                        </span>
                     </h1>
                     <p class="hero-text hidden" data-i18n="hero_text">Transformo visões complexas em experiências digitais leves, orgânicas e tecnicamente impecáveis.</p>
                     <div class="hero-actions hidden">
-                        <a href="https://wa.me/5541984684382" class="btn-hire-main" data-i18n="btn_hire">Quero uma pagina + rapida</a>
+                        <a href="https://wa.me/5541984684382" class="btn-hire-main" data-i18n="btn_hire">Quero uma página mais rápida</a>
                         <a href="#projetos" class="btn-secondary" data-i18n="btn_projects">Explorar Portfólio</a>
                     </div>
                 </div>
@@ -299,12 +304,51 @@
                 <article class="project-card hidden">
                     <div class="browser-ui">
                         <div class="browser-dots"><span></span><span></span><span></span></div>
-                        <div class="browser-address">detox-orange.app</div>
+                        <div class="browser-address">mentoria-nexo.com.br</div>
+                    </div>
+                    <div class="iframe-wrapper" id="project-mentoria-nexo">
+                        <div class="project-placeholder project-live-preview">
+                            <iframe class="project-preview-frame" src="projects/mentoria-nexo/index.html" title="Prévia da Mentoria Nexo" loading="lazy" tabindex="-1" aria-hidden="true" sandbox="allow-scripts allow-same-origin"></iframe>
+                            <button type="button" class="btn-live-demo" data-i18n="btn_explore" data-project-container="project-mentoria-nexo" data-project-url="projects/mentoria-nexo/index.html">Explorar Projeto</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card hidden">
+                    <div class="browser-ui">
+                        <div class="browser-dots"><span></span><span></span><span></span></div>
+                        <div class="browser-address">essenza-cafe.com.br</div>
+                    </div>
+                    <div class="iframe-wrapper" id="project-cafe-essenza">
+                        <div class="project-placeholder project-live-preview">
+                            <iframe class="project-preview-frame" src="projects/cafe-essenza/index.html" title="Prévia do Essenza Café" loading="lazy" tabindex="-1" aria-hidden="true" sandbox="allow-scripts allow-same-origin"></iframe>
+                            <button type="button" class="btn-live-demo" data-i18n="btn_explore" data-project-container="project-cafe-essenza" data-project-url="projects/cafe-essenza/index.html">Explorar Projeto</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card hidden">
+                    <div class="browser-ui">
+                        <div class="browser-dots"><span></span><span></span><span></span></div>
+                        <div class="browser-address">maison-rose.com.br</div>
+                    </div>
+                    <div class="iframe-wrapper" id="project-maison-rose">
+                        <div class="project-placeholder project-live-preview">
+                            <iframe class="project-preview-frame" src="projects/maison-rose/index.html" title="Prévia da Maison Rosé" loading="lazy" tabindex="-1" aria-hidden="true" sandbox="allow-scripts allow-same-origin"></iframe>
+                            <button type="button" class="btn-live-demo" data-i18n="btn_explore" data-project-container="project-maison-rose" data-project-url="projects/maison-rose/index.html">Explorar Projeto</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card hidden">
+                    <div class="browser-ui">
+                        <div class="browser-dots"><span></span><span></span><span></span></div>
+                        <div class="browser-address">chocoburger.com.br</div>
                     </div>
                     <div class="iframe-wrapper" id="project-hamburgue-doce">
                         <div class="project-placeholder">
-                            <img src="thumbs/doce.webp" alt="Preview Hamburgue Doce">
-                            <button class="btn-live-demo" data-i18n="btn_explore" onclick="loadIframe('project-hamburgue-doce', 'projects/hamburguer-doce/index.html')">Explorar Projeto</button>
+                            <img src="thumbs/doce.webp" alt="Preview Hamburgue Doce" loading="lazy" decoding="async">
+                            <button type="button" class="btn-live-demo" data-i18n="btn_explore" data-project-container="project-hamburgue-doce" data-project-url="projects/hamburguer-doce/index.html">Explorar Projeto</button>
                         </div>
                     </div>
                 </article>
@@ -316,8 +360,8 @@
                     </div>
                     <div class="iframe-wrapper" id="project-detox-orange">
                         <div class="project-placeholder">
-                            <img src="thumbs/detox.webp" alt="Preview Detox">
-                            <button class="btn-live-demo" data-i18n="btn_explore" onclick="loadIframe('project-detox-orange', 'projects/detox-orange/index.html')">Explorar Projeto</button>
+                            <img src="thumbs/detox.webp" alt="Preview Detox" loading="lazy" decoding="async">
+                            <button type="button" class="btn-live-demo" data-i18n="btn_explore" data-project-container="project-detox-orange" data-project-url="projects/detox-orange/index.html">Explorar Projeto</button>
                         </div>
                     </div>
                 </article>
@@ -329,8 +373,8 @@
                     </div>
                     <div class="iframe-wrapper" id="project-pizzeria">
                         <div class="project-placeholder">
-                            <img src="thumbs/pizzaria.webp" alt="Preview Pizzaria">
-                            <button class="btn-live-demo" data-i18n="btn_explore" onclick="loadIframe('project-pizzeria', 'projects/Pizaria-D\'Leonardo/index.html')">Explorar Projeto</button>
+                            <img src="thumbs/pizzaria.webp" alt="Preview Pizzaria" loading="lazy" decoding="async">
+                            <button type="button" class="btn-live-demo" data-i18n="btn_explore" data-project-container="project-pizzeria" data-project-url="projects/Pizaria-D'Leonardo/index.html">Explorar Projeto</button>
                         </div>
                     </div>
                 </article>
@@ -342,14 +386,13 @@
                     </div>
                     <div class="iframe-wrapper" id="project-bistro">
                         <div class="project-placeholder">
-                            <img src="thumbs/bistro.webp" alt="Preview Bistrô">
-                            <button class="btn-live-demo" data-i18n="btn_explore" onclick="loadIframe('project-bistro', 'projects/bistro/index.html')">Explorar Projeto</button>
+                            <img src="thumbs/bistro.webp" alt="Preview Bistrô" loading="lazy" decoding="async">
+                            <button type="button" class="btn-live-demo" data-i18n="btn_explore" data-project-container="project-bistro" data-project-url="projects/bistro/index.html">Explorar Projeto</button>
                         </div>
                     </div>
                 </article>
             </div>
         </section>
-    </main>
 
     <section id="faq" class="container">
             <div class="section-header hidden">
@@ -371,6 +414,7 @@
                 </details>
             </div>
         </section>
+    </main>
 
     <footer id="contato" class="footer">
         <div class="container hidden">
@@ -389,98 +433,13 @@
             <p class="copyright">© 2026 André Abrão. <br>Itaperuçu, PR | Front-end & Android Engineer</p>
         </div>
     </footer>
-    <div class="color-test-strip">
-        <div class="strip-box" style="background: var(--primary);" data-color="Primary"></div>
-        <div class="strip-box" style="background: var(--secondary);" data-color="Secondary"></div>
-        <div class="strip-box" style="background: var(--accent);" data-color="Accent"></div>
-        <div class="strip-box" style="background: var(--text-main);" data-color="Text"></div>
-        <div class="strip-box" style="background: var(--bg);" data-color="BG"></div>
+    <div class="color-test-strip" aria-hidden="true">
+        <span class="strip-box" style="background: var(--primary);"></span>
+        <span class="strip-box" style="background: var(--secondary);"></span>
+        <span class="strip-box" style="background: var(--accent);"></span>
+        <span class="strip-box" style="background: var(--text-main);"></span>
+        <span class="strip-box" style="background: var(--bg);"></span>
     </div>
-    <script src="script.js"></script>
-<script>
-    // 1. A função LOADIFRAME precisa ficar fora para ser acessível pelos botões
-    function loadIframe(containerId, url) {
-        const container = document.getElementById(containerId);
-        if (container) {
-            container.innerHTML = `
-                <iframe src="${url}" 
-                        frameborder="0" 
-                        style="width:100%; height:100%; border:none; border-radius: 12px;" 
-                        title="Projeto Demo">
-                </iframe>`;
-        }
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const textElement = document.getElementById('typing-text');
-        
-        const translations = {
-            'pt-BR': [
-                "com Performance.",
-                "Instantâneas.",
-                "feitas com IA.",
-                "Ultra Rápidas.",
-                "com Código Puro.",
-                "que Convertem."
-            ],
-            'en': [
-                "with Performance.",
-                "Instantaneous.",
-                "AI powered.",
-                "Ultra Fast.",
-                "with Pure Code.",
-                "that Convert."
-            ]
-        };
-
-        const currentLang = document.documentElement.lang || 'pt-BR';
-        const phrases = translations[currentLang] || translations['pt-BR'];
-
-        let phraseIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        let typeSpeed = 100;
-
-        function type() {
-            const currentPhrase = phrases[phraseIndex];
-            
-            if (isDeleting) {
-                textElement.textContent = currentPhrase.substring(0, charIndex - 1);
-                charIndex--;
-                typeSpeed = 40;
-            } else {
-                textElement.textContent = currentPhrase.substring(0, charIndex + 1);
-                charIndex++;
-                typeSpeed = 120;
-            }
-
-            if (!isDeleting && charIndex === currentPhrase.length) {
-                isDeleting = true;
-                typeSpeed = 3000;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                phraseIndex = (phraseIndex + 1) % phrases.length;
-                typeSpeed = 700;
-            }
-
-            setTimeout(type, typeSpeed);
-        }
-
-        type();
-     // Bloqueia o clique com o botão direito
-        document.addEventListener('contextmenu', event => event.preventDefault());
-
-        // Bloqueia atalhos de teclado (Ctrl+C, Ctrl+U, Ctrl+S)
-        document.onkeydown = function(e) {
-            if (e.ctrlKey && 
-                (e.keyCode === 67 || // C
-                e.keyCode === 85 || // U (Ver código fonte)
-                e.keyCode === 83 || // S (Salvar página)
-                e.keyCode === 73)) { // I (Inspecionar elemento)
-                return false;
-            }
-        };
-    });
-</script>
+    <script src="script.js?v=20260810c"></script>
 </body>
 </html>
