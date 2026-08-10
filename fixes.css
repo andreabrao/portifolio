@@ -261,15 +261,60 @@ body.dark .lp-feature-item p {
     }
 
     #projetos {
-        padding: 80px 0;
+        padding: 72px 16px;
+    }
+
+    #projetos .section-header {
+        margin-bottom: 42px;
+    }
+
+    #projetos .section-header h2 {
+        font-size: clamp(2.6rem, 12vw, 3.2rem);
+        letter-spacing: -1px;
     }
 
     .projects-grid {
-        gap: 56px;
+        gap: 44px;
+    }
+
+    .project-card {
+        border-radius: 18px;
+    }
+
+    .browser-ui {
+        gap: 10px;
+        padding: 12px 14px;
+    }
+
+    .browser-dots {
+        display: flex;
+        flex-shrink: 0;
+        gap: 4px;
+    }
+
+    .browser-dots span {
+        width: 8px;
+        height: 8px;
+    }
+
+    .browser-address {
+        min-width: 0;
+        padding: 6px 10px;
+        overflow: hidden;
+        font-size: 0.65rem;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
     .iframe-wrapper {
-        height: 270px;
+        height: clamp(250px, 72vw, 280px);
+    }
+
+    .btn-live-demo {
+        max-width: calc(100% - 32px);
+        padding: 14px 24px;
+        font-size: 0.68rem;
+        white-space: nowrap;
     }
 }
 
