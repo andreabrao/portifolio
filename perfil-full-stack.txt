@@ -1,0 +1,96 @@
+DESENVOLVIMENTO FULL STACK DE SITES E SISTEMAS WEB
+
+Transformo ideias e necessidades de negócio em sites, sistemas e aplicações web completas, funcionais e preparadas para evoluir.
+
+Atuo como Desenvolvedor Full Stack em todas as etapas do projeto: entendimento da necessidade, planejamento da solução, organização das funcionalidades, desenvolvimento do front-end e back-end, modelagem do banco de dados, criação de APIs, integrações, testes, otimização e publicação.
+
+Desenvolvo sites institucionais, landing pages, páginas comerciais, cardápios digitais, sistemas administrativos e soluções personalizadas. No front-end, crio interfaces modernas e responsivas com HTML, CSS e JavaScript. No back-end, implemento regras de negócio, cadastros, autenticação, painéis de gerenciamento, APIs REST e integrações com bancos de dados.
+
+Também realizo integrações com formulários, WhatsApp, redes sociais, mapas e serviços externos, além de configurações de SEO básico, domínio, hospedagem, DNS e certificado SSL.
+
+Meu objetivo não é apenas entregar código ou uma página bonita, mas entender o negócio e desenvolver uma solução rápida, organizada, segura e capaz de gerar resultados.
+
+POR QUE DESENVOLVER SEU PROJETO COMIGO?
+
+Visão completa da solução: participo do planejamento visual, funcional e técnico, ajudando a organizar páginas, módulos, fluxos e regras de negócio.
+
+Desenvolvimento ponta a ponta: atuo no front-end, back-end, banco de dados, APIs, integrações, testes e publicação.
+
+Design personalizado: desenvolvo interfaces alinhadas à identidade visual, ao público e aos objetivos de cada negócio.
+
+Responsividade completa: as soluções funcionam corretamente em computadores, tablets e celulares.
+
+Sistemas personalizados: desenvolvo cadastros, painéis administrativos, autenticação, controle de informações, dashboards e outras funcionalidades conforme a necessidade do projeto.
+
+Integrações: implemento formulários, WhatsApp, redes sociais, mapas, APIs e serviços externos.
+
+Performance: utilizo código organizado, imagens otimizadas e boas práticas para melhorar o carregamento e a experiência do usuário.
+
+SEO básico: organizo títulos, descrições, estrutura de conteúdo, sitemap e configurações essenciais para buscadores.
+
+Publicação completa: posso auxiliar com domínio, hospedagem, DNS, certificado SSL e disponibilização do projeto em produção.
+
+Comunicação transparente: mantenho o cliente informado sobre o andamento, as validações, as dificuldades e os próximos passos.
+
+Código organizado e sustentável: desenvolvo soluções estruturadas e preparadas para manutenção e futuras funcionalidades.
+
+EXPERIÊNCIA E PROJETOS
+
+Possuo mais de quatro anos de experiência criando soluções para a web e mais de 50 projetos desenvolvidos.
+
+Meu portfólio reúne projetos para diferentes segmentos, como alimentação, saúde, bem-estar, beleza, serviços e produtos digitais. Entre os trabalhos apresentados estão:
+
+Site institucional e comercial para a Detox Orange;
+Landing page para a Mentoria Nexo;
+Site de marca e cardápio para o Café Essenza;
+Site institucional com jornada de agendamento para a Maison Rosé;
+Sites para restaurantes, hamburguerias, cafeterias e pizzarias;
+Interfaces comerciais desenvolvidas com foco em apresentação, navegação e conversão.
+
+Também realizo manutenção, otimização e reconstrução de sites e sistemas que apresentam problemas de velocidade, organização visual, responsividade ou funcionamento.
+
+Além do desenvolvimento web, possuo conhecimentos em desenvolvimento Android nativo com Kotlin para projetos que necessitem de uma solução mobile dedicada.
+
+TECNOLOGIAS E COMPETÊNCIAS
+
+Front-end: HTML5, CSS3 e JavaScript;
+Back-end: PHP, regras de negócio e APIs REST;
+Banco de dados: MySQL e bancos de dados relacionais;
+Sistemas web: cadastros, autenticação, painéis administrativos, dashboards e operações CRUD;
+Interfaces: design responsivo, mobile first, UI/UX e acessibilidade;
+Integrações: formulários, WhatsApp, redes sociais, mapas, APIs e serviços externos;
+Otimização: desempenho, carregamento, imagens e estabilidade visual;
+SEO: títulos, metadados, hierarquia de conteúdo, sitemap e robots.txt;
+Publicação: domínio, hospedagem, DNS, certificado SSL, Hostinger e GitHub Pages;
+Versionamento: Git e GitHub;
+Desenvolvimento mobile: Android nativo com Kotlin.
+
+Avalio a tecnologia e a arquitetura mais adequadas considerando as necessidades, o prazo, o orçamento, a segurança e a evolução futura do projeto.
+
+COMO TRABALHO
+
+1. Entendimento: analiso o negócio, o público, os objetivos, as funcionalidades e os principais fluxos do projeto.
+
+2. Planejamento: organizo páginas, módulos, banco de dados, integrações, regras de negócio e estrutura técnica.
+
+3. Desenvolvimento: construo o front-end e o back-end por etapas, permitindo acompanhamento e validações.
+
+4. Testes e otimização: valido funcionalidades, integrações, responsividade, desempenho, formulários e fluxos de uso.
+
+5. Publicação: configuro o ambiente de hospedagem, banco de dados, domínio, DNS e certificado de segurança.
+
+6. Entrega e suporte: disponibilizo o projeto, explico seu funcionamento e ofereço orientação para utilização e administração.
+
+VAMOS DESENVOLVER SEU PROJETO?
+
+Se você precisa de um site institucional, landing page, sistema administrativo ou aplicação web personalizada, posso ajudar a estruturar e desenvolver uma solução completa.
+
+Meu compromisso é entregar uma solução moderna, funcional, organizada, fácil de manter e alinhada aos objetivos reais do seu negócio.
+
+RESUMO PROFISSIONAL
+
+Desenvolvedor Full Stack | Sites, sistemas web, APIs e bancos de dados
+
+Atuo na criação, manutenção e evolução de sites e aplicações web, participando de todo o ciclo de desenvolvimento. Minha experiência inclui front-end, back-end, bancos de dados, APIs REST, autenticação, painéis administrativos, integrações, SEO básico, otimização, testes e publicação.
+
+Desenvolvo projetos personalizados para diferentes segmentos, acompanhando o trabalho desde o entendimento inicial até a entrega em produção. Também possuo conhecimentos em desenvolvimento Android nativo com Kotlin.
