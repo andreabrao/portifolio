@@ -28,7 +28,7 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>AA.</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="fixes.css?v=20260811a">
+    <link rel="stylesheet" href="fixes.css?v=20260811d">
 </head>
 <body>
     <div id="magnetic-cursor"></div>
@@ -78,17 +78,22 @@
                     </div>
                 </div>
 
-                <div class="hero-showcase hidden" aria-label="Destaque do projeto Mentoria Nexo">
-                    <div class="showcase-mobile-frame">
-                        <img src="thumbs/nexo-mobile.webp?v=20260810b" alt="Página da Mentoria Nexo em versão mobile" width="390" height="844" fetchpriority="high">
-                    </div>
-                    <div class="showcase-note showcase-note-top">
-                        <strong data-i18n="hero_showcase_tag">Desenvolvimento sob medida</strong>
-                        <span data-i18n="hero_showcase_note">Sem templates genéricos</span>
-                    </div>
-                    <div class="showcase-note showcase-note-bottom">
-                        <strong data-i18n="hero_showcase_stack">Código organizado</strong>
-                        <span>HTML · CSS · JavaScript</span>
+                <div class="hero-showcase hero-showcase-live hidden" aria-label="Detox Orange — projeto real em produção">
+                    <div class="hero-feature-card">
+                        <div class="hero-feature-heading">
+                            <span data-i18n="hero_showcase_tag">Projeto real em produção</span>
+                            <strong>Detox Orange</strong>
+                        </div>
+                        <a class="showcase-mobile-frame hero-mobile-preview" href="https://www.detoxorange.com.br/#store" target="_blank" rel="noopener noreferrer" aria-label="Visitar a loja online Detox Orange">
+                            <span class="showcase-mobile-screen">
+                                <img src="thumbs/detox-mobile-live.png?v=20260811d" alt="Loja Detox Orange em versão mobile" width="375" height="812" fetchpriority="high">
+                            </span>
+                            <span class="live-project-status"><i aria-hidden="true"></i> Online</span>
+                        </a>
+                        <a class="hero-feature-link" href="https://www.detoxorange.com.br/#store" target="_blank" rel="noopener noreferrer">
+                            <span data-i18n="hero_project_link">Visitar loja online</span>
+                            <span aria-hidden="true">↗</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -137,24 +142,27 @@
                 <article class="case-study hidden">
                     <div class="case-study-copy">
                         <span class="project-number">01</span>
-                        <p class="project-category" data-i18n="case1_category">Mentoria e lançamento</p>
-                        <h3 data-i18n="case1_title">Uma oferta complexa apresentada com clareza.</h3>
-                        <p data-i18n="case1_desc">Uma direção editorial forte para organizar método, posicionamento e chamada para a nova turma sem sobrecarregar a decisão.</p>
+                        <p class="project-category" data-i18n="case1_category">E-commerce de alimentação saudável</p>
+                        <h3 data-i18n="case1_title">Uma operação real, rápida e pronta para vender.</h3>
+                        <p data-i18n="case1_desc">Site publicado para a Detox Orange, com catálogo, prova social e uma jornada direta até a compra.</p>
                         <dl class="project-facts">
-                            <div><dt data-i18n="case_goal_label">Objetivo</dt><dd data-i18n="case1_goal">Transformar experiência em uma oferta desejada</dd></div>
-                            <div><dt data-i18n="case_delivery_label">Entrega</dt><dd data-i18n="case1_delivery">Estratégia visual e landing page responsiva</dd></div>
+                            <div><dt data-i18n="case_goal_label">Objetivo</dt><dd data-i18n="case1_goal">Destacar os produtos e reduzir o caminho até o pedido</dd></div>
+                            <div><dt data-i18n="case_delivery_label">Entrega</dt><dd data-i18n="case1_delivery">Site responsivo com catálogo e jornada de compra</dd></div>
                         </dl>
-                        <div class="project-tags"><span>Posicionamento</span><span>Conversão</span><span>Mobile first</span></div>
+                        <div class="project-tags"><span>Loja online</span><span>Performance</span><span>Mobile first</span></div>
+                        <a class="project-external-link" href="https://www.detoxorange.com.br/#store" target="_blank" rel="noopener noreferrer">
+                            <span data-i18n="case1_link">Visitar projeto real</span><span aria-hidden="true">↗</span>
+                        </a>
                     </div>
                     <div class="project-visual project-card">
                         <div class="browser-ui">
                             <div class="browser-dots"><span></span><span></span><span></span></div>
-                            <div class="browser-address">mentoria-nexo.com.br</div>
+                            <div class="browser-address">www.detoxorange.com.br/#store</div>
                         </div>
-                        <div class="iframe-wrapper" id="project-mentoria-nexo">
+                        <div class="iframe-wrapper" id="project-detox-orange">
                             <div class="project-placeholder">
-                                <img src="thumbs/nexo.webp" alt="Preview Mentoria Nexo" loading="lazy" decoding="async">
-                                <button type="button" class="btn-live-demo" data-i18n="btn_explore" data-project-container="project-mentoria-nexo" data-project-url="projects/mentoria-nexo/index.html">Explorar projeto</button>
+                                <img src="thumbs/detox-desktop-live.png?v=20260811d" alt="Preview desktop do site real Detox Orange" width="1585" height="892" loading="lazy" decoding="async">
+                                <a class="btn-live-demo" href="https://www.detoxorange.com.br/#store" target="_blank" rel="noopener noreferrer" data-i18n="case1_open">Abrir site real</a>
                             </div>
                         </div>
                     </div>
@@ -302,10 +310,10 @@
 
                 <article class="compact-project hidden">
                     <div class="project-visual project-card">
-                        <div class="browser-ui"><div class="browser-dots"><span></span><span></span><span></span></div><div class="browser-address">detox-orange.app</div></div>
-                        <div class="iframe-wrapper" id="project-detox-orange"><div class="project-placeholder"><img src="thumbs/detox.webp" alt="Preview Detox Orange" loading="lazy" decoding="async"><button type="button" class="btn-live-demo" data-i18n="btn_explore" data-project-container="project-detox-orange" data-project-url="projects/detox-orange/index.html">Explorar projeto</button></div></div>
+                        <div class="browser-ui"><div class="browser-dots"><span></span><span></span><span></span></div><div class="browser-address">mentoria-nexo.com.br</div></div>
+                        <div class="iframe-wrapper" id="project-mentoria-nexo"><div class="project-placeholder"><img src="thumbs/nexo.webp" alt="Preview Mentoria Nexo" loading="lazy" decoding="async"><button type="button" class="btn-live-demo" data-i18n="btn_explore" data-project-container="project-mentoria-nexo" data-project-url="projects/mentoria-nexo/index.html">Explorar projeto</button></div></div>
                     </div>
-                    <div class="compact-project-copy"><p data-i18n="compact2_category">Alimentação saudável</p><h3>Detox Orange</h3><span data-i18n="compact2_desc">Catálogo leve, prova social e pedido direto pelo WhatsApp.</span></div>
+                    <div class="compact-project-copy"><p data-i18n="compact2_category">Mentoria e lançamento</p><h3>Mentoria Nexo</h3><span data-i18n="compact2_desc">Oferta complexa organizada em uma landing page editorial e responsiva.</span></div>
                 </article>
 
                 <article class="compact-project hidden">
@@ -420,6 +428,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=20260811b"></script>
+    <script src="script.js?v=20260811d"></script>
 </body>
 </html>
