@@ -1390,3 +1390,376 @@ body.dark .strategic-services li {
         text-align: center;
     }
 }
+
+/* Compact mobile rhythm: keeps the editorial hierarchy while shortening the journey. */
+@media (max-width: 768px) {
+    .hero-conversion {
+        padding: 40px 0 54px;
+    }
+
+    .hero-conversion .hero-layout {
+        gap: 26px;
+    }
+
+    .hero-conversion h1 {
+        margin: 22px 0;
+        font-size: clamp(2.9rem, 13.2vw, 3.6rem);
+        letter-spacing: -2.5px;
+    }
+
+    .hero-conversion h1 .hero-typing-line {
+        height: 2.2em;
+        min-height: 2.2em;
+    }
+
+    .section-intro {
+        margin-top: 16px;
+        font-size: 1.02rem;
+        line-height: 1.6;
+    }
+
+    .hero-conversion .hero-text {
+        margin-bottom: 24px;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .hero-actions {
+        gap: 4px;
+    }
+
+    .hero-actions .btn-hire-main {
+        padding: 16px 28px;
+    }
+
+    .hero-actions .btn-secondary {
+        padding: 13px 24px;
+    }
+
+    .hero-trust {
+        gap: 12px;
+        margin-top: 22px;
+    }
+
+    .hero-trust img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .hero-showcase {
+        padding: 4px 0 10px;
+    }
+
+    .showcase-mobile-frame {
+        width: min(342px, 89vw);
+        padding: 12px 8px 13px;
+        border-radius: 40px;
+    }
+
+    .showcase-mobile-frame img {
+        border-radius: 29px;
+    }
+
+    .showcase-note {
+        margin-top: 8px;
+        padding: 9px 11px;
+    }
+
+    .showcase-note strong {
+        font-size: 0.9rem;
+    }
+
+    .showcase-note span {
+        font-size: 0.64rem;
+    }
+
+    .showcase-note-bottom {
+        float: none;
+        margin-left: 6px;
+    }
+
+    .proof-stats {
+        gap: 24px;
+        padding: 42px 24px;
+    }
+
+    .proof-stats .stat-item + .stat-item {
+        padding-top: 24px;
+    }
+
+    .proof-stats .stat-item h2 {
+        font-size: 3rem;
+    }
+
+    #projetos.portfolio-section {
+        padding: 64px 16px;
+    }
+
+    .portfolio-heading {
+        margin-bottom: 48px !important;
+    }
+
+    .featured-projects {
+        gap: 64px;
+    }
+
+    .case-study,
+    .case-study-reverse {
+        gap: 28px;
+    }
+
+    .project-number {
+        margin-bottom: 12px;
+        font-size: 2.7rem;
+    }
+
+    .case-study-copy h3 {
+        margin: 10px 0 14px;
+        font-size: clamp(2.25rem, 10.5vw, 3rem);
+    }
+
+    .case-study-copy > p:not(.project-category) {
+        font-size: 1rem;
+        line-height: 1.62;
+    }
+
+    .project-facts {
+        gap: 12px;
+        margin-top: 22px;
+        padding: 18px 0;
+    }
+
+    .project-tags {
+        gap: 6px;
+        margin-top: 18px;
+    }
+
+    .project-tags span {
+        padding: 6px 10px;
+    }
+
+    #projetos .featured-projects .iframe-wrapper,
+    #projetos .other-projects-grid .iframe-wrapper {
+        height: clamp(220px, 58vw, 250px);
+    }
+
+    .other-projects-heading {
+        margin: 70px 0 32px;
+    }
+
+    .other-projects-grid {
+        gap: 38px;
+    }
+
+    .compact-project-copy {
+        padding: 16px 4px 0;
+    }
+
+    .compact-project-copy h3 {
+        margin: 5px 0;
+    }
+
+    #servicos.services-section {
+        padding: 64px 0;
+    }
+
+    #servicos .section-header {
+        margin-bottom: 40px;
+    }
+
+    #servicos .section-header h2 {
+        font-size: clamp(2.55rem, 11.5vw, 3rem);
+    }
+
+    .strategic-services {
+        gap: 20px;
+    }
+
+    .strategic-services .service-card {
+        padding: 30px 24px;
+    }
+
+    .service-kicker {
+        margin-bottom: 16px;
+        font-size: 2.05rem;
+    }
+
+    .strategic-services h3 {
+        margin-bottom: 12px;
+        font-size: 1.7rem;
+    }
+
+    .strategic-services ul {
+        gap: 9px;
+        padding-top: 22px;
+    }
+
+    .secondary-capability {
+        margin-top: 28px;
+    }
+
+    .performance-proof {
+        gap: 32px;
+        margin-top: 60px;
+        margin-bottom: 60px;
+        padding: 32px 22px;
+    }
+
+    .performance-copy h2 {
+        margin: 14px 0 18px;
+        font-size: 2.55rem;
+        line-height: 1.05;
+    }
+
+    .performance-copy > p {
+        line-height: 1.62;
+    }
+
+    .proof-list {
+        gap: 10px;
+        margin-top: 22px;
+    }
+
+    .performance-visual {
+        padding: 10px;
+    }
+
+    .audit-caption {
+        padding-top: 10px;
+    }
+
+    .process-section,
+    .testimonials-section,
+    .about-section-refined,
+    .faq-section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .process-section .section-header,
+    .testimonials-section .section-header,
+    .faq-section .section-header {
+        margin-bottom: 38px;
+    }
+
+    .process-section .section-header h2,
+    .testimonials-section .section-header h2,
+    .faq-section .section-header h2 {
+        font-size: clamp(2.5rem, 11.5vw, 3rem);
+    }
+
+    .method-grid {
+        gap: 18px;
+        margin-top: 32px;
+    }
+
+    .process-section .method-item {
+        min-height: 0;
+        padding: 28px;
+    }
+
+    .method-num {
+        margin-bottom: 10px;
+        font-size: 2.5rem;
+    }
+
+    .testimonials-grid {
+        gap: 18px;
+        margin-top: 32px;
+    }
+
+    .testimonial-card {
+        padding: 28px;
+    }
+
+    .testimonial-card p {
+        margin-bottom: 20px;
+        font-size: 1rem;
+    }
+
+    .about-card {
+        gap: 28px;
+        padding: 20px;
+    }
+
+    .about-portrait {
+        width: 100%;
+        max-width: 240px;
+        max-height: 240px;
+        margin: 0 auto;
+    }
+
+    .about-copy h2 {
+        margin: 14px 0 18px;
+        font-size: 2.4rem;
+    }
+
+    .about-copy > p:not(.about-location) {
+        font-size: 1rem;
+        line-height: 1.65;
+    }
+
+    .about-copy .about-tags {
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .about-copy .tag-tech {
+        padding: 8px 14px;
+    }
+
+    .about-copy .about-location {
+        margin-top: 24px;
+    }
+
+    .faq-grid {
+        gap: 12px;
+        margin-top: 28px;
+    }
+
+    details.method-item {
+        padding: 20px 22px;
+    }
+
+    details summary {
+        padding-right: 32px;
+        font-size: 1.05rem;
+        line-height: 1.35;
+    }
+
+    .conversion-footer {
+        padding: 72px 0 44px;
+    }
+
+    .footer-eyebrow {
+        margin-bottom: 18px;
+    }
+
+    .conversion-footer h2 {
+        margin-bottom: 24px;
+        font-size: clamp(2.35rem, 10.4vw, 2.75rem);
+    }
+
+    .footer-text {
+        margin-bottom: 24px;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .conversion-footer .footer-cta {
+        margin-bottom: 28px;
+    }
+
+    .conversion-footer .btn-primary {
+        padding: 16px 26px;
+    }
+
+    .conversion-footer .footer-links {
+        gap: 24px;
+        margin-bottom: 24px;
+    }
+
+    .conversion-footer .copyright {
+        font-size: 0.78rem;
+    }
+}
