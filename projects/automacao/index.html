@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlowPilot — Automação</title>
+  <style>
+    :root{--ink:#10231c;--paper:#f1ecfa;--white:#fffefd;--lime:#ddff4f;--yellow:#ffd84d;--purple:#b99bec;--line:#c7bdd5;--muted:#756d80}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,sans-serif}button{font:inherit}.page{max-width:1120px;margin:auto;padding:36px 26px 70px}
+    header{display:flex;align-items:center;justify-content:space-between;padding-bottom:26px;border-bottom:1px solid var(--ink)}.logo{display:flex;align-items:center;gap:11px;font-weight:850}.logo b{width:40px;height:40px;border-radius:50%;background:var(--ink);color:var(--lime);display:grid;place-items:center}.header-status{font:700 10px monospace;color:var(--muted)}.header-status:before{content:"";display:inline-block;width:7px;height:7px;background:#43b86a;border-radius:50%;margin-right:7px}
+    .intro{display:flex;justify-content:space-between;align-items:flex-end;margin:46px 0 30px}.eyebrow{font:700 10px monospace;letter-spacing:1.3px;color:var(--muted)}h1{font-size:48px;letter-spacing:-2.7px;margin:8px 0 0}.actions{display:flex;gap:9px}.actions button{border:1px solid #aba1ba;background:white;border-radius:7px;padding:11px 14px;font-size:12px;font-weight:750;cursor:pointer}.actions .run{background:var(--ink);color:white;border-color:var(--ink);min-width:175px}
+    .workspace{display:grid;grid-template-columns:1fr 290px;gap:16px}.flow-card,.log-card{border:1px solid var(--line);border-radius:11px;background:#f8f5fc;padding:24px}.flow-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}.flow-head strong{font-size:17px}.badge{font:700 9px monospace;color:#705195;background:#e9dffa;padding:6px 8px;border-radius:20px}
+    .workflow{max-width:700px;margin:auto}.step{display:grid;grid-template-columns:48px 1fr;gap:14px;position:relative;padding-bottom:14px}.step:not(:last-child):before{content:"";position:absolute;left:23px;top:45px;bottom:-4px;width:2px;background:#c8bed6}.node{width:48px;height:48px;border:1px solid #aa9fba;border-radius:50%;background:white;display:grid;place-items:center;font-weight:850;z-index:1;transition:.25s}.step-card{min-height:75px;border:1px solid var(--line);border-radius:9px;background:white;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;transition:.25s}.step-copy{display:grid;grid-template-columns:73px auto;gap:4px 14px;align-items:center}.tag{grid-row:1/3;background:#ece3f8;color:#76549d;border-radius:4px;padding:6px;text-align:center;font:700 8px monospace}.step-card small{color:var(--muted)}.state{font:700 9px monospace;color:#887d94}.step.running .node{background:var(--yellow);box-shadow:0 0 0 7px #ffd84d3d}.step.running .step-card{border-color:#8a6cac;transform:translateX(5px)}.step.done .node{background:var(--lime);border-color:var(--ink)}.step.done .step-card{border-color:#8eaa84}.step.done .state{color:#287a46}
+    .result{height:0;overflow:hidden;background:var(--ink);color:white;border-radius:8px;padding:0 16px;margin-top:4px;display:flex;justify-content:space-between;align-items:center;transition:.3s}.result.show{height:55px}.result span{font-size:10px;color:#aebdb4}
+    .log-card h2{font-size:16px;margin:7px 0 22px}.log-list{display:grid;gap:10px}.log{border-bottom:1px solid #ddd5e7;padding:0 0 12px;display:grid;gap:5px}.log span{font:700 9px monospace;color:var(--muted)}.log strong{font-size:12px}.log small{color:#2e8650}.empty-log{color:var(--muted);font-size:12px;line-height:1.6}.summary{margin-top:26px;background:var(--purple);border-radius:8px;padding:15px}.summary span{font:700 9px monospace}.summary strong{display:block;font-size:25px;margin-top:5px}
+    @media(max-width:800px){.workspace{grid-template-columns:1fr}.log-card{display:none}.intro{display:block}.actions{margin-top:20px}.flow-card{padding:18px}}
+    @media(max-width:520px){.page{padding:25px 13px 60px}.header-status{display:none}.intro{margin-top:35px}.intro h1{font-size:38px}.actions button{font-size:10px}.actions .run{min-width:150px}.flow-card{padding:16px 11px}.step{grid-template-columns:42px 1fr;gap:9px}.node{width:42px;height:42px}.step:not(:last-child):before{left:20px;top:40px}.step-card{padding:11px}.step-copy{display:flex;flex-direction:column;align-items:flex-start}.tag{display:none}.state{display:none}.step-card small{font-size:10px}.result{font-size:11px}.result span{display:none}}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header><div class="logo"><b>F/</b><strong>flowpilot</strong></div><span class="header-status">AUTOMAÇÕES OPERACIONAIS</span></header>
+    <section class="intro"><div><span class="eyebrow">AUTOMAÇÃO • EXEMPLO 04</span><h1>Lead → oportunidade</h1></div><div class="actions"><button id="reset">Reiniciar</button><button class="run" id="run">▶ Executar fluxo</button></div></section>
+    <section class="workspace">
+      <article class="flow-card"><div class="flow-head"><strong>Fluxo de atendimento</strong><span class="badge">4 ETAPAS</span></div><div class="workflow" id="workflow">
+        <div class="step"><div class="node">1</div><div class="step-card"><div class="step-copy"><span class="tag">GATILHO</span><strong>Novo contato recebido</strong><small>Formulário do portfólio</small></div><span class="state">AGUARDANDO</span></div></div>
+        <div class="step"><div class="node">2</div><div class="step-card"><div class="step-copy"><span class="tag">REGRA</span><strong>Validar e organizar dados</strong><small>Nome, e-mail e interesse</small></div><span class="state">AGUARDANDO</span></div></div>
+        <div class="step"><div class="node">3</div><div class="step-card"><div class="step-copy"><span class="tag">AÇÃO</span><strong>Criar oportunidade</strong><small>Pipeline comercial</small></div><span class="state">AGUARDANDO</span></div></div>
+        <div class="step"><div class="node">4</div><div class="step-card"><div class="step-copy"><span class="tag">AÇÃO</span><strong>Enviar resposta</strong><small>E-mail personalizado</small></div><span class="state">AGUARDANDO</span></div></div>
+      </div><div class="result" id="result"><strong>✓ Fluxo concluído com sucesso</strong><span>4 ETAPAS • 0 ERROS • 2,08s</span></div></article>
+      <aside class="log-card"><span class="eyebrow">HISTÓRICO</span><h2>Execuções recentes</h2><div class="log-list" id="logs"><p class="empty-log">Execute o fluxo para acompanhar cada evento em tempo real.</p></div><div class="summary"><span>TAXA DE SUCESSO</span><strong>100%</strong></div></aside>
+    </section>
+  </main>
+  <script>
+    const steps=[...document.querySelectorAll('.step')],run=document.querySelector('#run'),result=document.querySelector('#result'),logs=document.querySelector('#logs');let running=false;
+    const wait=time=>new Promise(resolve=>setTimeout(resolve,time));
+    function reset(){running=false;steps.forEach((step,index)=>{step.className='step';step.querySelector('.node').textContent=index+1;step.querySelector('.state').textContent='AGUARDANDO'});result.classList.remove('show');run.textContent='▶ Executar fluxo';logs.innerHTML='<p class="empty-log">Execute o fluxo para acompanhar cada evento em tempo real.</p>'}
+    async function execute(){if(running)return;reset();running=true;run.textContent='Executando...';logs.innerHTML='';for(let index=0;index<steps.length;index++){const step=steps[index];step.classList.add('running');step.querySelector('.state').textContent='PROCESSANDO';await wait(520);step.classList.remove('running');step.classList.add('done');step.querySelector('.node').textContent='✓';step.querySelector('.state').textContent='CONCLUÍDO';const title=step.querySelector('strong').textContent;logs.insertAdjacentHTML('beforeend',`<div class="log"><span>ETAPA 0${index+1}</span><strong>${title}</strong><small>✓ Concluída</small></div>`)}result.classList.add('show');run.textContent='Executar novamente';running=false}
+    run.addEventListener('click',execute);document.querySelector('#reset').addEventListener('click',reset);
+  </script>
+</body>
+</html>

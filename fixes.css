@@ -812,6 +812,129 @@ main {
     text-align: center;
 }
 
+.systems-showcase-heading {
+    max-width: 820px;
+    margin: 150px auto 48px;
+    text-align: center;
+}
+
+.systems-showcase-heading h3 {
+    color: var(--primary);
+    font-size: clamp(2.7rem, 5vw, 4.2rem);
+    letter-spacing: -2px;
+}
+
+.systems-showcase-heading h3 span {
+    color: var(--secondary);
+    font-weight: 400;
+    font-style: italic;
+}
+
+.systems-showcase-heading > p {
+    max-width: 660px;
+    margin: 20px auto 0;
+    color: var(--text-light);
+    font-size: 1.02rem;
+    line-height: 1.7;
+}
+
+.systems-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 46px 28px;
+}
+
+#projetos .systems-projects-grid .iframe-wrapper {
+    height: clamp(240px, 20vw, 295px);
+    border-radius: 0;
+}
+
+.system-project-placeholder {
+    background: var(--primary);
+}
+
+.system-cover {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 27px;
+    background: #10231c;
+    color: #f5f3eb;
+    text-align: left;
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), filter 0.5s;
+}
+
+.system-cover::before {
+    content: "";
+    position: absolute;
+    right: -58px;
+    top: -64px;
+    width: 185px;
+    height: 185px;
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 50%;
+    box-shadow: 0 0 0 34px rgba(255,255,255,0.035), 0 0 0 68px rgba(255,255,255,0.025);
+}
+
+.system-cover::after {
+    content: attr(data-number);
+    position: absolute;
+    right: 22px;
+    bottom: 8px;
+    color: rgba(255,255,255,0.11);
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    line-height: 1;
+}
+
+.system-cover-type {
+    position: relative;
+    z-index: 1;
+    font-family: monospace;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+.system-cover > strong {
+    position: relative;
+    z-index: 1;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3vw, 3rem);
+    letter-spacing: -1.5px;
+}
+
+.system-cover-chips {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    max-width: 75%;
+}
+
+.system-cover-chips span {
+    padding: 6px 8px;
+    border: 1px solid rgba(255,255,255,0.26);
+    border-radius: 999px;
+    font-size: 0.6rem;
+    font-weight: 700;
+}
+
+.system-cover-admin { background: #143026; color: #e4ff62; }
+.system-cover-auth { background: #17304a; color: #b9dcff; }
+.system-cover-crud { background: #51291f; color: #ffb29f; }
+.system-cover-flow { background: #322446; color: #d7c1ff; }
+.system-cover-api { background: #101a17; color: #dcff54; }
+
+.system-project:hover .system-cover {
+    filter: brightness(0.62) saturate(1.08);
+    transform: scale(1.025);
+}
+
 .other-projects-heading h3 {
     color: var(--primary);
     font-size: clamp(2.6rem, 5vw, 4rem);
@@ -1152,6 +1275,7 @@ body.dark .project-visual {
 
 body.dark .case-study-copy h3,
 body.dark .compact-project-copy h3,
+body.dark .systems-showcase-heading h3,
 body.dark .other-projects-heading h3,
 body.dark .about-copy h2 {
     color: #f0f5f1;
@@ -1199,6 +1323,10 @@ body.dark .strategic-services li {
 
     #projetos .featured-projects .iframe-wrapper {
         height: clamp(390px, 50vw, 560px);
+    }
+
+    .systems-projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .strategic-services {
@@ -1329,14 +1457,17 @@ body.dark .strategic-services li {
     }
 
     #projetos .featured-projects .iframe-wrapper,
+    #projetos .systems-projects-grid .iframe-wrapper,
     #projetos .other-projects-grid .iframe-wrapper {
         height: clamp(235px, 64vw, 300px);
     }
 
+    .systems-showcase-heading,
     .other-projects-heading {
         margin-top: 100px;
     }
 
+    .systems-projects-grid,
     .other-projects-grid {
         grid-template-columns: 1fr;
         gap: 56px;
@@ -1539,14 +1670,17 @@ body.dark .strategic-services li {
     }
 
     #projetos .featured-projects .iframe-wrapper,
+    #projetos .systems-projects-grid .iframe-wrapper,
     #projetos .other-projects-grid .iframe-wrapper {
         height: clamp(220px, 58vw, 250px);
     }
 
+    .systems-showcase-heading,
     .other-projects-heading {
         margin: 70px 0 32px;
     }
 
+    .systems-projects-grid,
     .other-projects-grid {
         gap: 38px;
     }

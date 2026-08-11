@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecureGate — Autenticação</title>
+  <style>
+    :root{--ink:#0d2019;--cream:#f3f1e9;--lime:#dbff4f;--blue:#79baff;--muted:#718078;--line:#bdc5be;--error:#a93822}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:var(--cream);color:var(--ink);font-family:Arial,sans-serif}.page{min-height:100vh;display:grid;grid-template-columns:1.05fr 1fr}
+    .visual{background:var(--ink);color:white;padding:52px 6vw;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}.visual:before{content:"";width:420px;height:420px;border:1px solid #dfff4f28;border-radius:50%;position:absolute;right:-150px;top:-130px;box-shadow:0 0 0 70px #dfff4f0b,0 0 0 140px #dfff4f08}.logo{display:flex;align-items:center;gap:10px;font-weight:800;z-index:1}.logo b{width:40px;height:40px;border-radius:50%;background:var(--lime);color:var(--ink);display:grid;place-items:center;letter-spacing:-2px}
+    .visual-copy{z-index:1}.eyebrow{font:700 10px monospace;letter-spacing:1.4px;color:#aebcb4}.visual h1{font-size:clamp(52px,6vw,86px);line-height:.92;letter-spacing:-5px;margin:17px 0 24px}.visual h1 em{color:var(--lime);font-style:normal}.visual p{color:#acbbb2;line-height:1.7;max-width:500px;font-size:17px}.proofs{display:flex;gap:22px;color:#bdc9c1;font:700 10px monospace}.proofs span:before{content:"✓";color:var(--lime);margin-right:7px}
+    .access{display:grid;place-items:center;padding:45px}.card{width:min(410px,100%)}.card h2{font-size:37px;letter-spacing:-2px;margin:9px 0}.card>p{color:var(--muted);margin:0 0 30px;line-height:1.5}.card label{display:block;font-size:11px;font-weight:800;margin:17px 0 7px}.card input{width:100%;padding:14px;border:1px solid var(--line);border-radius:7px;background:#fffef9;color:var(--ink)}.password{position:relative}.password button{position:absolute;right:8px;top:8px;border:0;border-radius:5px;background:#e7eae4;padding:6px 10px;cursor:pointer;font-size:10px;font-weight:700}.options{display:flex;justify-content:space-between;align-items:center;margin:13px 0}.options label{margin:0;display:flex;gap:8px;align-items:center;font-weight:500}.options input{width:auto}.options a{font-size:11px;color:var(--ink);font-weight:700}.error{display:none;background:#ffe4dd;border:1px solid #ffc2b4;color:var(--error);padding:10px;border-radius:6px;font-size:11px;margin-top:13px}.error.show{display:block}.submit{width:100%;border:0;border-radius:7px;background:var(--lime);padding:15px 17px;margin-top:10px;font-weight:850;display:flex;justify-content:space-between;cursor:pointer}.divider{display:flex;align-items:center;gap:12px;color:#849088;font-size:10px;margin:24px 0}.divider:before,.divider:after{content:"";height:1px;background:var(--line);flex:1}.demo-note{border:1px dashed #aeb8b0;padding:12px;border-radius:7px;color:#68766e;font:11px/1.5 monospace}
+    .success{text-align:center}.success-icon{width:82px;height:82px;border-radius:50%;background:var(--lime);display:grid;place-items:center;font-size:35px;margin:0 auto 24px}.session{display:flex;gap:12px;align-items:center;text-align:left;border:1px solid var(--line);border-radius:8px;padding:13px;margin:27px 0 6px;background:#fffef9}.avatar{width:44px;height:44px;border-radius:50%;background:var(--blue);display:grid;place-items:center;font-weight:850}.session span{display:grid;gap:4px}.session small{color:var(--muted)}.logout{width:100%;border:0;background:var(--ink);color:white;padding:14px;border-radius:7px;font-weight:750;cursor:pointer}
+    @media(max-width:800px){.page{grid-template-columns:1fr}.visual{min-height:330px;padding:36px 28px}.visual h1{font-size:58px}.visual p{font-size:14px}.proofs{display:none}.access{padding:40px 20px}}
+    @media(max-width:450px){.visual{min-height:270px}.visual h1{font-size:44px;letter-spacing:-3px;margin-bottom:12px}.visual p{margin:0}.access{padding-top:32px}.card h2{font-size:31px}}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="visual">
+      <div class="logo"><b>S/</b><strong>securegate</strong></div>
+      <div class="visual-copy"><span class="eyebrow">AUTENTICAÇÃO • EXEMPLO 02</span><h1>Acesso simples.<br><em>Dados seguros.</em></h1><p>Uma interface de login clara, com validação dos dados, feedback de erro e estado de sessão.</p></div>
+      <div class="proofs"><span>VALIDAÇÃO ATIVA</span><span>SESSÃO SEGURA</span><span>RESPONSIVO</span></div>
+    </section>
+    <section class="access">
+      <form class="card" id="loginForm">
+        <span class="eyebrow">ÁREA RESTRITA</span><h2>Bem-vindo de volta</h2><p>Use os dados de demonstração para acessar o sistema.</p>
+        <label for="email">E-mail</label><input id="email" type="email" value="demo@portfolio.dev" autocomplete="email">
+        <label for="password">Senha</label><div class="password"><input id="password" type="password" value="portfolio123" autocomplete="current-password"><button type="button" id="toggle">Ver</button></div>
+        <div class="options"><label><input type="checkbox" checked> Manter conectado</label><a href="#">Esqueci a senha</a></div>
+        <div class="error" id="error" role="alert">Use um e-mail válido e uma senha com pelo menos 6 caracteres.</div>
+        <button class="submit" type="submit">Entrar no sistema <span>→</span></button>
+        <div class="divider">ACESSO DE TESTE</div><div class="demo-note">E-mail: demo@portfolio.dev<br>Senha: portfolio123</div>
+      </form>
+      <section class="card success" id="success" hidden><div class="success-icon">✓</div><span class="eyebrow">SESSÃO INICIADA</span><h2>Olá, visitante!</h2><p>O fluxo de autenticação foi concluído com sucesso.</p><div class="session"><div class="avatar">VP</div><span><strong id="sessionEmail"></strong><small>Perfil administrador</small></span></div><button class="logout" id="logout">Encerrar sessão</button></section>
+    </section>
+  </main>
+  <script>
+    const form=document.querySelector('#loginForm'),email=document.querySelector('#email'),password=document.querySelector('#password'),error=document.querySelector('#error'),success=document.querySelector('#success');
+    document.querySelector('#toggle').addEventListener('click',event=>{const visible=password.type==='text';password.type=visible?'password':'text';event.currentTarget.textContent=visible?'Ver':'Ocultar'});
+    form.addEventListener('submit',event=>{event.preventDefault();if(!email.value.includes('@')||password.value.length<6){error.classList.add('show');return}error.classList.remove('show');document.querySelector('#sessionEmail').textContent=email.value;form.hidden=true;success.hidden=false});
+    document.querySelector('#logout').addEventListener('click',()=>{success.hidden=true;form.hidden=false;password.type='password';document.querySelector('#toggle').textContent='Ver'});
+  </script>
+</body>
+</html>

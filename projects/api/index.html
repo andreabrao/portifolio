@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orbit — API REST</title>
+  <style>
+    :root{--ink:#0a1511;--panel:#101f19;--panel2:#172820;--line:#405048;--cream:#edf2ed;--lime:#ddff4f;--muted:#93a199;--orange:#ff7657;--yellow:#ffd84d}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:var(--ink);color:var(--cream);font-family:Arial,sans-serif}button,select,textarea{font:inherit}.page{max-width:1180px;margin:auto;padding:35px 27px 70px}
+    header{display:flex;justify-content:space-between;align-items:center;padding-bottom:28px;border-bottom:1px solid var(--line)}.brand{display:flex;gap:11px;align-items:center;font-weight:850}.brand b{width:40px;height:40px;border:1px solid var(--lime);color:var(--lime);border-radius:50%;display:grid;place-items:center}.version{font:700 10px monospace;color:var(--muted);border:1px solid var(--line);border-radius:20px;padding:8px 11px}
+    .hero{display:grid;grid-template-columns:.85fr 1.5fr;gap:60px;align-items:center;padding:65px 0 30px}.eyebrow{font:700 10px monospace;letter-spacing:1.3px;color:var(--lime)}h1{font-size:clamp(56px,7vw,92px);line-height:.88;letter-spacing:-5px;margin:18px 0 25px}.intro p{color:var(--muted);line-height:1.7;font-size:16px}.features{display:grid;grid-template-columns:repeat(3,1fr);margin-top:30px;border-top:1px solid var(--line)}.features span{padding:15px 8px 0 0;color:var(--muted);font-size:10px}.features b{display:block;color:var(--lime);font:800 16px monospace;margin-bottom:5px}
+    .console{border:1px solid var(--line);border-radius:11px;overflow:hidden;background:#07100c;box-shadow:0 35px 90px #000}.console-bar{height:45px;background:var(--panel2);display:flex;align-items:center;gap:7px;padding:0 15px}.console-bar i{width:9px;height:9px;border-radius:50%;background:var(--orange)}.console-bar i:nth-child(2){background:var(--yellow)}.console-bar i:nth-child(3){background:#54c679}.console-bar span{margin:auto;font:700 9px monospace;color:#829087}
+    .request{display:grid;grid-template-columns:92px 1fr auto;gap:9px;padding:18px;border-bottom:1px solid #29362f}.request select,.request code,.request button{border:1px solid var(--line);border-radius:6px;background:var(--panel);color:white;padding:12px}.request select{color:var(--lime);font-weight:850}.request code{font:12px monospace;display:flex;align-items:center;overflow:hidden}.request button{background:var(--lime);color:var(--ink);font-weight:850;cursor:pointer;min-width:96px}.request button:disabled{opacity:.6;cursor:wait}
+    .body-editor{padding:0 18px 15px;display:none}.body-editor.show{display:block}.body-editor label{display:block;font:700 9px monospace;color:var(--muted);padding:13px 0 8px}.body-editor textarea{width:100%;height:90px;resize:none;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:#bfe1cc;padding:12px;font:12px/1.5 monospace}
+    .response-head{height:43px;display:flex;align-items:center;gap:13px;padding:0 18px;font:700 9px monospace;color:var(--muted);letter-spacing:1px}.response-head strong{margin-left:auto;color:#5cdb86}.response-head small{color:#78877e}.output{margin:0;min-height:318px;padding:21px;color:#6f7e75;white-space:pre-wrap;font:12px/1.65 monospace}.output.ready{color:#c6d7cc}.key{color:#77baff}.string{color:#dfff7c}.number{color:#ff9e86}
+    .docs{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}.doc{border:1px solid var(--line);border-radius:8px;padding:16px;background:var(--panel)}.doc b{font:800 10px monospace;color:var(--lime);margin-right:9px}.doc span{font:12px monospace}.doc p{font-size:11px;color:var(--muted);margin:9px 0 0}
+    @media(max-width:850px){.hero{grid-template-columns:1fr;gap:35px;padding-top:45px}.intro{max-width:650px}.console{width:100%}.docs{grid-template-columns:1fr}}
+    @media(max-width:520px){.page{padding:25px 13px 55px}.version{display:none}.hero{padding-top:38px}.hero h1{font-size:61px}.request{grid-template-columns:78px 1fr}.request button{grid-column:1/-1}.output{min-height:270px;font-size:10px}.features{gap:6px}.features span{font-size:9px}}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header><div class="brand"><b>O/</b><strong>orbit api</strong></div><span class="version">REST • V1.0</span></header>
+    <section class="hero">
+      <div class="intro"><span class="eyebrow">API REST • EXEMPLO 05</span><h1>Dados em<br>movimento.</h1><p>Uma demonstração visual de integração com API. Escolha o método, envie a requisição e analise a resposta JSON.</p><div class="features"><span><b>REST</b>Endpoints claros</span><span><b>JSON</b>Dados estruturados</span><span><b>200</b>Respostas previsíveis</span></div></div>
+      <div class="console">
+        <div class="console-bar"><i></i><i></i><i></i><span>api.portfolio.dev</span></div>
+        <div class="request"><select id="method" aria-label="Método HTTP"><option>GET</option><option>POST</option><option>DELETE</option></select><code id="endpoint">/v1/projects?limit=2</code><button id="send">Enviar →</button></div>
+        <div class="body-editor" id="bodyEditor"><label for="requestBody">CORPO DA REQUISIÇÃO</label><textarea id="requestBody">{
+  "name": "Novo projeto",
+  "status": "rascunho"
+}</textarea></div>
+        <div class="response-head"><span>RESPOSTA</span><strong id="httpStatus"></strong><small id="time"></small></div><pre class="output" id="output">// A resposta JSON aparecerá aqui.</pre>
+      </div>
+      <div class="docs"><article class="doc"><b>GET</b><span>/v1/projects</span><p>Lista todos os projetos cadastrados.</p></article><article class="doc"><b>POST</b><span>/v1/projects</span><p>Cria um novo projeto na base.</p></article><article class="doc"><b>DELETE</b><span>/v1/projects/:id</span><p>Remove um projeto pelo identificador.</p></article></div>
+    </section>
+  </main>
+  <script>
+    const method=document.querySelector('#method'),endpoint=document.querySelector('#endpoint'),editor=document.querySelector('#bodyEditor'),output=document.querySelector('#output'),send=document.querySelector('#send');
+    const responses={GET:{status:'200 OK',data:{data:[{id:1,name:'Projeto Atlas',status:'ativo'},{id:2,name:'Projeto Nexo',status:'revisão'}],total:2}},POST:{status:'201 CREATED',data:{id:3,name:'Novo projeto',status:'rascunho',created_at:'agora'}},DELETE:{status:'204 NO CONTENT',data:{success:true,message:'Projeto removido.'}}};
+    function configure(){const value=method.value;endpoint.textContent=value==='GET'?'/v1/projects?limit=2':value==='POST'?'/v1/projects':'/v1/projects/2';editor.classList.toggle('show',value==='POST');output.className='output';output.textContent='// A resposta JSON aparecerá aqui.';document.querySelector('#httpStatus').textContent='';document.querySelector('#time').textContent=''}
+    function colorize(json){return json.replace(/(".*?")(?=\s*:)/g,'<span class="key">$1</span>').replace(/:\s(".*?")/g,': <span class="string">$1</span>').replace(/:\s(\d+)/g,': <span class="number">$1</span>')}
+    send.addEventListener('click',()=>{send.disabled=true;send.textContent='Enviando...';output.textContent='Conectando ao servidor...';output.className='output';setTimeout(()=>{const response=responses[method.value];document.querySelector('#httpStatus').textContent=response.status;document.querySelector('#time').textContent='124 ms';output.innerHTML=colorize(JSON.stringify(response.data,null,2));output.className='output ready';send.disabled=false;send.textContent='Enviar →'},650)});method.addEventListener('change',configure);configure();
+  </script>
+</body>
+</html>
